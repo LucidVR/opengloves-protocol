@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message DeviceInfo {
+  enum Hand {
+    LEFT = 0;
+    RIGHT = 1;
+  }
+  Hand hand = 1;
+
+  enum DeviceType {
+    LUCIDGLOVES = 0;
+  }
+  DeviceType device_type = 2;
+}
+
+message DeviceInfoRequest {}
+message DeviceInfoResponse {
+  repeated DeviceInfo infos = 1;
+}
+
+message DeviceInputRequest {}
+message DeviceInputResponse {}
+
+service DeviceOutput {
+  rpc GetDeviceInfos(DeviceInfoRequest) returns (DeviceInfoResponse);
+
+  rpc StreamDeviceInput(DeviceInputRequest) returns (stream DeviceInputResponse);
+}

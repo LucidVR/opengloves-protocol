@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message ForceFeedbackCurlInput {
+  float thumb_curl = 1;
+  float index_curl = 2;
+  float middle_curl = 3;
+  float ring_curl = 4;
+  float pinky_curl = 5;
+}
+
+message ForceFeedbackCurlOutput {
+  bool success = 1;
+}
+
+service ForceFeedback {
+  rpc SetForceFeedbackCurl(ForceFeedbackCurlInput) returns (ForceFeedbackCurlOutput);
+}
