@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package server_input;
+
 message ForceFeedbackCurlInput {
   float thumb_curl = 1;
   float index_curl = 2;

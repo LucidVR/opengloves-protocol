@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package server_output;
+
 message DeviceInfo {
   enum Hand {
     LEFT = 0;
