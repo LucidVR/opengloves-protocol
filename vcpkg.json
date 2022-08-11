@@ -1,0 +1,9 @@
+{
+    "name": "opengloves-protocol",
+    "homepage": "https://github.com/LucidVR/opengloves-protocol",
+    "version-string": "1.0",
+    "dependencies": [
+        "grpc",
+        "protobuf"
+    ]
+}

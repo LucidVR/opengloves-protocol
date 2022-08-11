@@ -2,21 +2,22 @@ cmake_minimum_required(VERSION 3.7.1)
 
 project(opengloves_protocol)
 
-find_package(protobuf CONFIG REQUIRED)
+find_package(Protobuf CONFIG REQUIRED)
 find_package(gRPC CONFIG REQUIRED)
 find_package(Threads)
 
 set(PROTO_FILES
-    protos/server/server_output.proto
-)
+        protos/driver/driver_input.proto
+        protos/server/server_output.proto
+        )
 
 add_library(opengloves_protos ${PROTO_FILES})
 target_link_libraries(opengloves_protos
-    PUBLIC
+        PUBLIC
         protobuf::libprotobuf
         gRPC::grpc
         gRPC::grpc++
-)
+        )
 target_include_directories(opengloves_protos PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
 
 get_target_property(grpc_cpp_plugin_location gRPC::grpc_cpp_plugin LOCATION)

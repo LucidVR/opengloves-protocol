@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package driver_input;
+
+message TrackingReferenceInfo {
+  enum Hand {
+    LEFT = 0;
+    RIGHT = 1;
+  }
+
+  Hand hand = 1;
+
+  int32 openvr_id = 2;
+}
+
+message TrackingReferenceResponse {}
+
+service DriverInput {
+  rpc TrackingReferenceFound(TrackingReferenceInfo) returns(TrackingReferenceResponse);
+}
