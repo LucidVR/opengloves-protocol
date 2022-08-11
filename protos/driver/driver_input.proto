@@ -10,7 +10,7 @@ message TrackingReferenceInfo {
 
   Hand hand = 1;
 
-  int32 openvr_id = 2;
+  uint32 openvr_id = 2;
 }
 
 message TrackingReferenceResponse {}
